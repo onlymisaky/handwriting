@@ -1,0 +1,17 @@
+function indexOf(searchElement, fromIndex) {
+  let start = isNaN(fromIndex) ? 0 : Number(fromIndex);
+  const len = this.length;
+  if (start < 0) {
+    start = Math.max(0, len + start);
+  }
+
+  for (let index = start; index < len; index++) {
+    if (this[index] === searchElement) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+Array.prototype.indexOf = indexOf;
