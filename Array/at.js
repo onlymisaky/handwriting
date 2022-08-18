@@ -1,21 +1,12 @@
-/**
- * @param {number} index 
- */
-function at(index) {
-  let i = Number(index);
-  i = isNaN(i) ? 0 : i;
-
+Array.prototype.at = function at(index) {
   const len = this.length;
-  const a = len - 1;
-  const b = len * -1;
-
-  if (i >= 0 && i <= a) {
-    return this[i];
-  } else if (i >= b && i < 0) {
-    return this[len + i];
-  } else {
+  let _index = isNaN(index) ? 0 : Number(index);
+  if (_index < 0) {
+    _index = len + _index;
+  }
+  if (_index >= len || _index < 0) {
     return undefined;
   }
-}
 
-Array.prototype.at = at;
+  return this[_index];
+}
