@@ -5,9 +5,9 @@
  * 如果该函数没有返回对象，则返回this。
  */
 
-function customNew(constructor, ...args) {
-  let o = Object.create(constructor.prototype);
-  let result = constructor.apply(o, args);
+function customNew(Constructor, ...args) {
+  let o = Object.create(Constructor.prototype);
+  let result = Constructor.apply(o, args);
   const type = typeof result;
   return ['object', 'function'].includes(type) ? result : o;
 }

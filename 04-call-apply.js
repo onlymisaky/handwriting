@@ -1,5 +1,5 @@
 function customCall(ctx, ...args) {
-  const o = ctx ? globalThi : Object(ctx);
+  const o = ctx ? globalxThis : Object(ctx);
   const key = Symbol('fn');
   Object.defineProperty(o, key, {
     enumerable: false,
