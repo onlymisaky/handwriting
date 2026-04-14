@@ -1,3 +1,4 @@
+// https://juejin.cn/post/7238978371689136185
 function createStack(source, parent) {
   return Object.keys(source).map((key) => ({ key, value: source[key], parent }));
 }
